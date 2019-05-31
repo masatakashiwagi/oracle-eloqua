@@ -12,7 +12,9 @@ password = 'xxxxxxxxx'
 ###
 
 client = Eloqua_Request(sitename, username, password, mode="REST")
-campaign_response = client.get_assets_info(object_type="campaign", asset_id=1574, depth="complete")
+
+asset_id = 1574
+campaign_response = client.get_assets_info(object_type="campaign", asset_id=asset_id, depth="complete")
 campaign_res = json.loads(campaign_response)
 
 print campaign_response
@@ -23,9 +25,9 @@ startAt = datetime.datetime.fromtimestamp(int(campaign_res["startAt"]))
 endAt = datetime.datetime.fromtimestamp(int(campaign_res["endAt"]))
 cam_res_endAt = datetime.datetime.fromtimestamp(int(campaign_res["endAt"]) + int(31536000))
 
-print "キャンペーン名: " + unicode(name).encode('utf-8')
-print "ステータス: " + str(currentStatus)
-print "キャンペーン作成日: " + str(createdAt)
-print "キャンペーン開始日: " + str(startAt)
-print "キャンペーン終了日: " + str(endAt)
-print "キャンペーンレスポンス終了日: " + str(cam_res_endAt)
+print "campaign name: " + unicode(name).encode('utf-8')
+print "status: " + str(currentStatus)
+print "campaign created date: " + str(createdAt)
+print "campaign started date: " + str(startAt)
+print "campaign ended date: " + str(endAt)
+print "campaign response ended date: " + str(cam_res_endAt)
