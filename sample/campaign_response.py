@@ -3,6 +3,10 @@
 
 import json
 import datetime
+import sys
+# library append path
+sys.path.append('../src')
+
 from eloqua_request import Eloqua_Request
 
 ###

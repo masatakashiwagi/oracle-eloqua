@@ -182,14 +182,3 @@ class Eloqua_Request:
                 return json.dumps(req.json(), sort_keys=True, indent=4, ensure_ascii=False)
             else:
                 return req.status_code
-
-
-if __name__ == '__main__':
-    #login(sitename, username, password)
-    #loginurl = 'https://login.eloqua.com/id'
-    sitename = 'your sitename'
-    username = 'your username'
-    password = 'your password'
-    client = Eloqua_Request(sitename, username, password, mode="REST")
-    print client.get_assets_info(object_type="segment")
-
